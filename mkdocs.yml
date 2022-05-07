@@ -1,3 +1,94 @@
-site_name: My Docs
+site_name: カラフルなパンダ
 theme:
-  name: material
+  name: material # MkDocs for Materialに表示スタイルを切替.
+  custom_dir: overrides
+  language: ja # メニュー言語を日本語に変更.
+  icon: # サイト名横のアイコン画像を変更.
+    logo: material/panda
+  # favicon
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+      # primary: deep purple
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+      # primary: deep purple
+
+  features:
+    - navigation.tabs # タブ表示を有効化.
+    - navigation.tabs.sticky
+    - navigation.tracking
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.tabs.link
+  font:
+    text: Noto Sans
+    code: Roboto Mono
+
+# Navigation
+nav:
+  - ホーム: index.md
+  - このサイトについて: about.md
+
+markdown_extensions:
+  # Code blocks
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - admonition
+  - pymdownx.details
+  - tables
+  - toc:
+      permalink: true
+  # Lists: https://squidfunk.github.io/mkdocs-material/reference/lists/#configuration
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  # ユーザー個別で効かせたい設定を記述.
+  - css/custom.css
+
+# Copyright
+copyright: "Copyright © 2022 - Now - wen"
+
+plugins:
+  - search:
+      lang:
+        - ja
+        - en
+  # - tags
+
+extra:
+  analytics:
+    provider: google
+    property: UA-XXXXXXXX-X
+    feedback:
+      # title: Was this page helpful
+      title: この記事は役に立ちましたか?
+      ratings:
+        - icon: material/heart
+          name: This page was helpful
+          data: 1
+          note: Thanks for your feedback!
+        - icon: material/heart-broken
+          name: This page could be improved
+          data: 0
+          note: Thanks for your feedback!
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/pandatell
